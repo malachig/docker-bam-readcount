@@ -39,8 +39,11 @@ LABEL \
 RUN apt-get update
 
 RUN mkdir -p /opt/bam-readcount/bin
+RUN mkdir -p /opt/bam-readcount/test-data
 WORKDIR /opt/bam-readcount
 COPY --from=0 /bam-readcount/build/bin/bam-readcount /opt/bam-readcount/bin/bam-readcount
+COPY --from=0 /bam-readcount/test-data/ref.* /opt/bam-readcount/test-data/
+COPY --from=0 /bam-readcount/test-data/test.bam* /opt/bam-readcount/test-data/
 RUN ln -s /opt/bam-readcount/bin/bam-readcount /usr/bin/bam-readcount
 
 ENTRYPOINT ["/usr/bin/bam-readcount"]
