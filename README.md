@@ -6,7 +6,7 @@ and installed. Note that this does *not* build from `master`, but the
 `v1.0.0` tag. Edit the `Dockerfile` to use `master` or a different branch
 or tag.
 
-This image is automatically built in DockerHub: https://hub.docker.com/r/mgibio/bam-readcount
+This Dockerfile has a corresponding build in Dockerhub https://hub.docker.com/r/mgibio/bam-readcount
 
     docker pull mgibio/bam-readcount
 
