@@ -14,12 +14,12 @@ RUN apt-get update && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* && rm -rf /var/tmp/*
 
-# Clone and build v1.0.0
+# Clone and build v1.0.1
 RUN cd / && \
     git clone https://github.com/genome/bam-readcount && \
     cd bam-readcount && \
     # For a specific tag enable the git checkout below
-    git checkout v1.0.0 && \
+    git checkout v1.0.1 && \
     rm -rf build && \
     mkdir build && \
     cd build && \
@@ -33,8 +33,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 LABEL \
-    version="v1.0.0" \
-    description="Ubuntu Focal with bam-readcount v1.0.0"
+    version="v1.0.1" \
+    description="Ubuntu Focal with bam-readcount v1.0.1"
 
 RUN apt-get update
 
